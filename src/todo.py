@@ -53,3 +53,20 @@ class ToDoList:
         self.tasks[title] = task
         return task
 
+# src/todo.py
+class Task:
+    def __init__(self, title: str, description: str):
+        if not title or title.strip() == "":
+            raise ValueError("Título da tarefa não pode ser vazio.")
+        self.title = title
+        self.description = description
+        self.completed = False
+
+class ToDoList:
+    def __init__(self):
+        self.tasks = {}
+
+    def add_task(self, title: str, description: str):
+        task = Task(title, description)
+        self.tasks[title] = task
+        return task
