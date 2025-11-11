@@ -36,3 +36,20 @@ class ToDoList:
         if title not in self.tasks:
             raise KeyError("Tarefa não encontrada.")
         del self.tasks[title]
+
+    # src/todo.py
+class Task:
+    def __init__(self, title: str, description: str):
+        self.title = title
+        self.description = description
+        self.completed = False
+
+class ToDoList:
+    def __init__(self):
+        self.tasks = {}
+
+    def add_task(self, title: str, description: str):
+        task = Task(title, description)
+        self.tasks[title] = task
+        return task
+
